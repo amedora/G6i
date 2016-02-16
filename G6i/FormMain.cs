@@ -64,6 +64,17 @@ namespace G6i
         {
             this.Close();
         }
+
+        private void btnInject_Click(object sender, EventArgs e)
+        {
+            var setup = SetupParser.Load(tbxSetupFile.Text);
+            var constList = setup.ListConstantValues();
+            var motec = MotecFile.Load(tbxMotecFile.Text);
+            motec.AddConstantValues(constList);
+            motec.Save(withBackup: true);
+
+            MessageBox.Show("Done.", "Done", MessageBoxButtons.OK);
+        }
     }
 
     class FileSelector

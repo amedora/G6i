@@ -49,7 +49,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.00535F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.99465F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbxSetupFile, 1, 0);
@@ -89,7 +89,7 @@
             this.tbxSetupFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxSetupFile.Location = new System.Drawing.Point(90, 15);
             this.tbxSetupFile.Name = "tbxSetupFile";
-            this.tbxSetupFile.Size = new System.Drawing.Size(231, 19);
+            this.tbxSetupFile.Size = new System.Drawing.Size(230, 19);
             this.tbxSetupFile.TabIndex = 2;
             this.tbxSetupFile.TabStop = false;
             // 
@@ -98,7 +98,7 @@
             this.tbxMotecFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxMotecFile.Location = new System.Drawing.Point(90, 65);
             this.tbxMotecFile.Name = "tbxMotecFile";
-            this.tbxMotecFile.Size = new System.Drawing.Size(231, 19);
+            this.tbxMotecFile.Size = new System.Drawing.Size(230, 19);
             this.tbxMotecFile.TabIndex = 3;
             this.tbxMotecFile.TabStop = false;
             // 
@@ -155,6 +155,7 @@
             this.btnInject.TabIndex = 3;
             this.btnInject.Text = "&Inject";
             this.btnInject.UseVisualStyleBackColor = true;
+            this.btnInject.Click += new System.EventHandler(this.btnInject_Click);
             // 
             // FormMain
             // 

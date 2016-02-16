@@ -142,6 +142,10 @@ namespace G6i
             {
                 return "0";
             }
+            else if (Regex.IsMatch(this.Name, @".*SpringRate"))
+            {
+                return "0";
+            }
             else
             {
                 return null;
