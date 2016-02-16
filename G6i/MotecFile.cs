@@ -46,8 +46,7 @@ namespace G6i
                 throw new ApplicationException("Motec file has not loaded.");
             }
 
-            var targetElement = "XXX";
-            var targetNode = this.XDoc.Descendants(targetElement).First();
+            var targetNode = this.ConstantValuesRoot();
 
             foreach(var c in constList)
             {
