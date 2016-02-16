@@ -26,8 +26,8 @@ namespace TestG6i
         {
             var motec = MotecFile.Load(Path.GetFullPath(@"../../sample/sample-alreadyset.ldx"));
 
-            motec.AddConstantValues(new List<ConstantValues> {
-                new ConstantValues("LFShockDeflAtGarage", 1.23),
+            motec.AddConstantValues(new List<ConstantValue> {
+                new ConstantValue("LFShockDeflAtGarage", 1.23),
             });
 
             motec.Save(withBackup: true);

@@ -46,7 +46,7 @@ namespace G6i
             }
         }
 
-        public void AddConstantValues(List<ConstantValues> constList)
+        public void AddConstantValues(List<ConstantValue> constList)
         {
             if (!(this.XDoc is XDocument))
             {
@@ -85,14 +85,14 @@ namespace G6i
         }
     }
 
-    public class ConstantValues
+    public class ConstantValue
     {
         public string Name { get; set; }
         public double Value { get; set; }
         public string Unit { get; set; }
         public string DPS { get; set; }
 
-        public ConstantValues(string name, double value)
+        public ConstantValue(string name, double value)
         {
             this.Name = name;
             this.Value = value;

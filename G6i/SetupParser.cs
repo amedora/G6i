@@ -41,6 +41,15 @@ namespace G6i
             return parser;
         }
 
+        public List<ConstantValue> ListConstantValues()
+        {
+            var components = Enum.GetValues(typeof(Components)).Cast<Components>();
+            var consts = from c in components
+                         select new ConstantValue(c.Name(), this.GetValue(c));
+
+            return consts.ToList();
+        }
+
         public double GetValue(Components component)
         {
             var value = this.HTML.XPathSelectElement(component.XPath()).Value;

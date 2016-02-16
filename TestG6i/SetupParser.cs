@@ -26,5 +26,14 @@ namespace TestG6i
             value = setup.GetValue(Components.LFSpringRate);
             value.Is(425);
         }
+
+        [TestMethod]
+        public void ListProperly()
+        {
+            var setup = SetupParser.Load(@"../../sample/charlotte_quadoval.htm");
+            var list = setup.ListConstantValues();
+
+            list.Count.Is(18);
+        }
     }
 }
