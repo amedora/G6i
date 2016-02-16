@@ -36,7 +36,14 @@ namespace G6i
             {
                 File.Copy(this.Path, this.Path + ".backup");
             }
-            this.XDoc.Save(this.Path, SaveOptions.None);
+
+            // Motec extension file should be UTF-8 without BOM.
+            // However, XDocument.Save() is always append BOM to the file
+            // so we have to save the file manually.
+            using (var sw = new StreamWriter(this.Path, false)) // If we don't specified the file encoding, it's UTF-8 without BOM.
+            {
+                sw.Write(string.Format("{0}{1}{2}", this.XDoc.Declaration, "\n", this.XDoc.ToString().Replace("\r\n", "\n")));
+            }
         }
 
         public void AddConstantValues(List<ConstantValues> constList)
@@ -46,11 +53,24 @@ namespace G6i
                 throw new ApplicationException("Motec file has not loaded.");
             }
 
-            var targetNode = this.ConstantValuesRoot();
+            var root = this.ConstantValuesRoot();
+            var newconsts = from c in constList
+                            select c.ToXElement();
 
-            foreach(var c in constList)
+            foreach(var c in newconsts)
             {
-                targetNode.Add(c.ToXElement());
+                var element = root.Elements("Numeric")
+                    .Where(e => e.Attribute("Id").Value == c.Attribute("Id").Value)
+                    .FirstOrDefault();
+
+                if (element == null)
+                {
+                    root.Add(c);
+                }
+                else
+                {
+                    element.ReplaceWith(c);
+                }
             }
         }
 
@@ -85,11 +105,13 @@ namespace G6i
             var top = new XElement("Numeric");
             top.Add(new XAttribute("Id", this.Name));
             top.Add(new XAttribute("Value", this.Value.ToString("F6")));
-            top.Add(new XAttribute("DPS", this.DPS));
+
             if (this.Unit != null)
             {
                 top.Add(new XAttribute("Unit", this.Unit));
             }
+
+            top.Add(new XAttribute("DPS", this.DPS));
 
             return top;
         }
