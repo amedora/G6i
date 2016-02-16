@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace G6i
@@ -62,16 +63,59 @@ namespace G6i
     public class ConstantValues
     {
         public string Name { get; set; }
-        public string Value { get; set; }
+        public double Value { get; set; }
         public string Unit { get; set; }
+        public string DPS { get; set; }
+
+        public ConstantValues(string name, double value)
+        {
+            this.Name = name;
+            this.Value = value;
+            this.Unit = this.GetUnit();
+            this.DPS = this.GetDPS();
+        }
 
         public XElement ToXElement()
         {
-            var top = new XElement(this.Name);
-            top.Add(new XElement("Value", this.Value));
-            top.Add(new XElement("Unit", this.Unit));
+            var top = new XElement("Numeric");
+            top.Add(new XAttribute("Id", this.Name));
+            top.Add(new XAttribute("Value", this.Value.ToString("F6")));
+            top.Add(new XAttribute("Unit", this.GetUnit()));
+            top.Add(new XAttribute("DPS", this.GetDPS()));
 
             return top;
+        }
+
+        private string GetUnit()
+        {
+            if (Regex.IsMatch(this.Name, @"\w\wShockDefl.*"))
+            {
+                return "in";
+            }
+            else if (Regex.IsMatch(this.Name, @"\w\wCornerWeight"))
+            {
+                return "lbs";
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private string GetDPS()
+        {
+            if (Regex.IsMatch(this.Name, @"\w\wShockDefl.*"))
+            {
+                return "2";
+            }
+            else if (Regex.IsMatch(this.Name, @"\w\wCornerWeight"))
+            {
+                return "0";
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
