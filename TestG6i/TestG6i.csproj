@@ -58,6 +58,7 @@
     <Compile Include="ConstantValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MotecFile.cs" />
+    <Compile Include="SetupParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\G6i\G6i.csproj">
