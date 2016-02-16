@@ -13,15 +13,15 @@ namespace TestG6i
         {
             var cv = new ConstantValues("LFShockDeflAtGarage", 7.62);
             var xl = cv.ToXElement();
-            Assert.AreEqual("in", xl.Attribute("Unit").Value);
-            Assert.AreEqual("7.620000", xl.Attribute("Value").Value);
-            Assert.AreEqual("2", xl.Attribute("DPS").Value);
+            xl.Attribute("Unit").Value.Is("in");
+            xl.Attribute("Value").Value.Is("7.620000");
+            xl.Attribute("DPS").Value.Is("2");
 
             var cv2 = new ConstantValues("LFCornerWeight", 888);
             var xl2 = cv2.ToXElement();
-            Assert.AreEqual("lbs", xl2.Attribute("Unit").Value);
-            Assert.AreEqual("888.000000", xl2.Attribute("Value").Value);
-            Assert.AreEqual("0", xl2.Attribute("DPS").Value);
+            xl2.Attribute("Unit").Value.Is("lbs");
+            xl2.Attribute("Value").Value.Is("888.000000");
+            xl2.Attribute("DPS").Value.Is("0");
         }
     }
 }
