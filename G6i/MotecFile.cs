@@ -85,8 +85,11 @@ namespace G6i
             var top = new XElement("Numeric");
             top.Add(new XAttribute("Id", this.Name));
             top.Add(new XAttribute("Value", this.Value.ToString("F6")));
-            top.Add(new XAttribute("Unit", this.GetUnit()));
-            top.Add(new XAttribute("DPS", this.GetDPS()));
+            top.Add(new XAttribute("DPS", this.DPS));
+            if (this.Unit != null)
+            {
+                top.Add(new XAttribute("Unit", this.Unit));
+            }
 
             return top;
         }
