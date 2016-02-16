@@ -100,7 +100,7 @@ namespace G6i
             }
             else if (Regex.IsMatch(this.Name, @"\w\wCornerWeight"))
             {
-                return "lbs";
+                return "lb";
             }
             else
             {

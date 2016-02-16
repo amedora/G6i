@@ -19,7 +19,7 @@ namespace TestG6i
 
             var cv2 = new ConstantValues("LFCornerWeight", 888);
             var xl2 = cv2.ToXElement();
-            xl2.Attribute("Unit").Value.Is("lbs");
+            xl2.Attribute("Unit").Value.Is("lb");
             xl2.Attribute("Value").Value.Is("888.000000");
             xl2.Attribute("DPS").Value.Is("0");
         }
