@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LDXFile Version="1.6" Locale="English">
+  <Maths Id="Maths" Flags="184" Locale="English">
+    <MathConstants>
+      <MathConstant Name="Fuel Density" Type="MoTeC.Float" Unit="lb/USgal" Value="6.259054"/>
+    </MathConstants>
+  </Maths>
+  <Layers>
+    <Details>
+      <String Id="Event"/>
+      <String Id="Venue" Value="charlotte quadoval"/>
+      <Numeric Id="Venue Length" Value="1.000000" Unit="mile" DPS="0"/>
+      <String Id="Driver" Value="Satoru Ohno"/>
+      <String Id="Vehicle Id" Value="stockcars toyotacamry"/>
+      <String Id="Vehicle Desc" Value="stockcars toyotacamry"/>
+      <String Id="Engine Id"/>
+      <String Id="Session"/>
+      <String Id="Start Lap"/>
+      <String Id="Short Comment"/>
+      <String Id="Long Comment"/>
+      <DateTime Id="Log Date" Value="8/2/2016"/>
+      <DateTime Id="Log Time" Value="23:28:48"/>
+      <String Id="Sky"/>
+      <Numeric Id="Air Temp" Value="78.000000" Unit="F" DPS="0"/>
+      <Numeric Id="Rel Humidity" Value="55.000000" Unit="%" DPS="0"/>
+      <String Id="Wind Direction" Value="N"/>
+      <Numeric Id="Wind Speed" Value="2.000000" Unit="mph" DPS="0"/>
+      <String Id="Weather Comment"/>
+      <String Id="Vehicle Type" Value="Car"/>
+      <String Id="Vehicle Drive Type"/>
+      <String Id="Vehicle Comment"/>
+      <Numeric Id="LFShockDeflAtGarage" Value="7.620000" Unit="in" DPS="2"/>
+      <Numeric Id="LRShockDeflAtGarage" Value="7.120000" Unit="in" DPS="2"/>
+      <Numeric Id="RFShockDeflAtGarage" Value="5.760000" Unit="in" DPS="2"/>
+      <Numeric Id="RRShockDeflAtGarage" Value="6.840000" Unit="in" DPS="2"/>
+      <Numeric Id="LFShockDeflAvailable" Value="11.380000" Unit="in" DPS="2"/>
+      <Numeric Id="LRShockDeflAvailable" Value="10.000000" Unit="in" DPS="0"/>
+      <Numeric Id="RFShockDeflAvailable" Value="10.130000" Unit="in" DPS="2"/>
+      <Numeric Id="RRShockDeflAvailable" Value="10.000000" Unit="in" DPS="0"/>
+      <Numeric Id="LFCornerWeight" Value="885.000000" Unit="lb" DPS="0"/>
+      <Numeric Id="LRCornerWeight" Value="896.000000" Unit="lb" DPS="0"/>
+      <Numeric Id="RFCornerWeight" Value="894.000000" Unit="lb" DPS="0"/>
+      <Numeric Id="RRCornerWeight" Value="781.000000" Unit="lb" DPS="0"/>
+      <Numeric Id="LFSpringRate" Value="3000.000000" DPS="0"/>
+      <Numeric Id="LRSpringRate" Value="800.000000" DPS="0"/>
+      <Numeric Id="RFSpringRate" Value="3100.000000" DPS="0"/>
+      <Numeric Id="RRSpringRate" Value="925.000000" DPS="0"/>
+      <Numeric Id="LFShockSpringRate" Value="1300.000000" DPS="0"/>
+      <Numeric Id="RFShockSpringRate" Value="1700.000000" DPS="0"/>
+      <String Id="Total Laps" Value="11"/>
+      <String Id="Fastest Time" Value="0:28.875"/>
+      <String Id="Fastest Lap" Value="1"/>
+    </Details>
+  </Layers>
+</LDXFile>

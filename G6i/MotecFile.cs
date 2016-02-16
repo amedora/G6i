@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace G6i
 {
-    class MotecFile
+    public class MotecFile
     {
         public XDocument XDoc { get; private set; }
         public string Path { get; private set; }
@@ -52,6 +53,11 @@ namespace G6i
             {
                 targetNode.Add(c.ToXElement());
             }
+        }
+
+        private XElement ConstantValuesRoot()
+        {
+            return this.XDoc.XPathSelectElement("/LDXFile/Layers/Details");
         }
 
         private static bool FileIsValid(string path)
